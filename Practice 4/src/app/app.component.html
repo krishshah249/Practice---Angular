@@ -1,0 +1,16 @@
+﻿<table border="2" class="table table-striped table-dark" >
+    <tr>
+        <th><a href="#" (click)="sortById()" >ID</a></th>
+        <th><a href="#" (click)="sortByName()">Name</a></th>
+        <th><a href="#" (click)="sortBySalary()">Salary</a></th>
+        <th><a href="#" (click)="sortByDep()">Department</a></th>
+        <th><a href="#" (click)="sortByDate()">DateOfJoining</a></th>
+    </tr>
+    <tr *ngFor="let data of Array">
+        <td>{{data.empId}}</td>
+        <td>{{data.empName}}</td>
+        <td>{{data.empSal}}</td>
+        <td>{{data.empDep}}</td>
+        <td>{{data.empjoiningdate}}</td>
+    </tr>
+</table>

@@ -1,0 +1,37 @@
+<table>
+<tr>
+    <td>Employee Id</td>
+    <td><input type="text" [(ngModel)]="empId" /></td>
+</tr>
+<tr>
+    <td>Employee Name</td>
+    <td><input type="text" [(ngModel)]="empName" /></td>
+</tr>
+<tr>
+    <td>Employee Salary</td>
+    <td><input type="text" [(ngModel)]="empSalary" /></td>
+</tr>
+<tr>
+    <input type="button" value="Add Data" (click)="addEmployee()" />
+</tr>
+</table>
+
+
+<h2>All Employees</h2>
+
+
+<table>
+
+<tr>
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+</tr>
+<tr *ngFor="let data of empRecords,let i=index">
+    <td>{{data.empId}}</td>
+    <td>{{data.empName | checkmyown}}</td>
+    <td>{{data.empSalary | curreny:'INR':true}}</td>
+    <td><input type="button" value="Delete Record" (click)="deleteEmp(i)"></td>
+    <td><input type="button" value="Update Record" (click)="updateEmp(i)"></td>
+</tr>
+</table>

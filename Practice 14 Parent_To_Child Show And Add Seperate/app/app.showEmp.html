@@ -1,0 +1,15 @@
+<h2>Show All Employee</h2>
+<div *ngIf="check then addemp()"></div>
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+    </tr>
+    <tr *ngFor="let data of empall ;let i=index">
+        <td> {{data.empId}}</td>
+        <td> {{data.empName}}</td>
+        <td> {{data.empSalary}}</td>
+    </tr>
+</table>
+<!--  <div *ngIf="true then (addemp())"></div> -->

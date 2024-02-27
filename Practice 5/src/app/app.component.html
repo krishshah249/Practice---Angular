@@ -1,0 +1,56 @@
+﻿<form #prodForm="ngForm" (ngSubmit)="addProduct()">
+
+    <p style="font-size: 35px; font-weight: bold; margin-top: 4%" align="center">ADD PRODUCT</p>
+  <table class="table table-bordered table-dark"  style="width: 50%;  height: 0%; margin-top: 1%" align="center">
+    <tr> 
+        <td>Product Id</td>
+        <td><input type="text" name="id" id="pid" [(ngModel)]="productId" #idcontrol="ngModel"  /></td>
+        <span class="alert alert-danger" role="alert" *ngIf="idcontrol.touched && idcontrol.invalid">Product ID should be Filled</span>
+    </tr>
+    <tr> 
+        <td>Product Name</td>
+        <td><input type="text" name="pname" id="pdname" [(ngModel)]="productName"  #namecontrol="ngModel" required/> </td>
+        <span class="alert alert-warning" role="alert" *ngIf="namecontrol.touched && namecontrol.invalid">Product Name should be Filled</span>
+    </tr>
+    <tr> 
+        <td>Product Cost</td>
+        <td><input type="number" pattern="[1-9][0-9]*" name="cost" id="pcost" [(ngModel)]="productCost" #costcontrol="ngModel" required/> </td>
+        <span class="alert alert-secondary" role="alert" *ngIf="costcontrol.touched && costcontrol.invalid">Product Cost should be Filled</span>
+    </tr>
+    <tr> 
+        <td>Product Online</td>
+        <td>
+            <input type="radio" [(ngModel)]="status"  name="check" value="Yes" required/>Yes
+            <input type="radio" name="check" [(ngModel)]="status"  value="No" required/>No
+        </td>
+    </tr>
+    <tr> 
+        <td>Product Category</td>
+        <td><select name="category" [(ngModel)]="category" #categorycontrol="ngModel" required>
+        <option value=""></option>
+        <option value="Grocery" name="productCategory">Grocery</option>
+        <option value="Mobile" name="productCategory"  >Mobile</option>
+        <option value="Electronics" name="productCategory"  >Electronics</option>
+        <option value="Cloths" name="productCategory"  >Cloths</option>
+        </select>
+        <span  class="alert alert-primary" role="alert" *ngIf="categorycontrol.touched && categorycontrol.invalid">Select Atleast One Category</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Available in Store</td>
+        <td class="checkbox-inline" >
+            <input type="checkbox" id="checkbox1" name="checkbox" value="Big Bazar"  [(ngModel)]="available1" #availcontrol="ngModel" (change)="AddAvail('BigBazar')">Big Bazar
+            <input type="checkbox" id="checkbox2" name="checkbox" value="DMart"  [(ngModel)]="available2"  #availcontrol="ngModel" (change)="AddAvail('DMart')">DMart
+            <input type="checkbox" id="checkbox3" name="checkbox" value="Reliance"  [(ngModel)]="available3"  #availcontrol="ngModel" (change)="AddAvail('Reliance')">Reliance
+             <input type="checkbox" id="checkbox4" name="checkbox" value="Mega Store"  [(ngModel)]="available4"  #availcontrol="ngModel" (change)="AddAvail('Mega Store')">Mega Store
+        </td>
+    </tr>
+    
+    <tr> 
+        <td><input type="submit" style="margin-left: 30%" class="btn btn-outline-success" value="Add Product" [disabled]="prodForm.invalid ||  !status1"/> </td>
+        <td><input type="reset" style="margin-left: 35%" class="btn btn-primary" value="Reset" /></td>
+    </tr>
+</table> 
+
+</form>

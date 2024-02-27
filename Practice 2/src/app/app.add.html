@@ -1,0 +1,15 @@
+<div class="jumbotron container-fluid" style="width: 30%">
+    <label>Employee ID</label>
+    <input type="number" class="form-control" [(ngModel)]="empId" style="width: 95%">
+
+    <label>Employee Name</label>
+    <input type="text" class="form-control" [(ngModel)]="empName" style="width: 95%">
+    <label>Employee Salary</label>
+    <input type="number" class="form-control" [(ngModel)]="empSalary" style="width: 95%">
+    <label>Employee Department</label>
+    <input type="text" class="form-control" [(ngModel)]="empDepart" style="width: 95%">
+    <br>
+    <button class="btn btn-primary" (click)="addEmployee()">Submit</button>
+    <br>
+    {{empId}} {{empName}} {{empSalary}} {{empDepart}}
+</div>

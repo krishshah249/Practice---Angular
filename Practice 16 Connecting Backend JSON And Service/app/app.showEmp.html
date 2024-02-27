@@ -1,0 +1,16 @@
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Department</th>
+        <th>Delete Entry</th>
+    </tr>
+    <tr *ngFor="let em of empAll; let i = index">
+        <td>{{em.empId}}</td>
+        <td>{{em.empName}}</td>
+        <td>{{em.empSalary}}</td>
+        <td>{{em.empDepartment}}</td>
+        <td><input type="button" value="Delete" (click)="deleteEmp(i)" /></td>
+    </tr>
+</table>

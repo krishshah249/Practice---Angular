@@ -1,0 +1,40 @@
+<h1>Add Employee</h1>
+
+
+<!-- Two Way Binding--><!--Angular Forms-->
+
+<section>
+<form #empForm=ngForm (ngSubmit)="addEmployee()">
+    <div class="form-group">
+        <label for="inputid">Employee Id</label>
+        <input type="number" class="form-control" id="eid" name="id" [(ngModel)]="empId" 
+        #idcontrol="ngModel" autocomplete="off" required aria-describedby="idHelp" placeholder="Enter Id">
+        <small id="idHelp" class="form-text text-muted" *ngIf="idcontrol.touched && idcontrol.invalid">
+        ID Should be Filled</small>
+    </div>
+    <div class="form-group">
+        <label for="inputname">Employee Name</label>
+        <input type="text" class="form-control" id="ename" name="name" [(ngModel)]="empName" 
+        #namecontrol="ngModel" autocomplete="off" required aria-describedby="nameHelp" placeholder="Enter Name">
+        <small id="nameHelp" class="form-text text-muted"  *ngIf="namecontrol.touched && namecontrol.invalid">
+        Name Should be Filled</small>
+    </div>  
+    <div class="form-group">
+        <label for="inputsalary">Employee Salary</label>
+        <input type="number" class="form-control" id="esalary" name="salary" [(ngModel)]="empSalary"
+        #salarycontrol="ngModel"  autocomplete="off" required aria-describedby="salaryHelp" placeholder="Enter Salary">
+        <small id="salaryHelp" class="form-text text-muted"  *ngIf="salarycontrol.touched && salarycontrol.invalid">
+        Salary Should be Filled</small>
+    </div>         
+    <div class="form-group">
+        <label for="inputdept">Department</label>
+        <input type="text" class="form-control"id="edept"  name="department" [(ngModel)]="empDepartment" 
+        #departmentcontrol="ngModel"  autocomplete="off" required aria-describedby="deptHelp" placeholder="Enter Department">
+        <small id="deptHelp" class="form-text text-muted"  *ngIf="departmentcontrol.touched && departmentcontrol.invalid">
+        Department Should be Filled</small>
+    </div>       
+    <div>
+        <input type="submit" value="Add Data" [disabled]="empForm.invalid" class="btn btn-primary" />
+    </div>
+</form>
+</section>

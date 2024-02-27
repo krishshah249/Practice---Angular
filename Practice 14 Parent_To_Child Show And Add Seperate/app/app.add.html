@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <td>Employee Id </td>
+        <td><input type="text" [(ngModel)]="empId" /> </td>
+    </tr>
+    <tr>
+        <td>Employee Name </td>
+        <td><input type="text" [(ngModel)]="empName" /> </td>
+    </tr>
+    <tr>
+        <td>Employee Salary </td>
+        <td><input type="text" [(ngModel)]="empSalary" /> </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="ADD DATA" (click)="addEmployee()" />
+        </td>
+
+    </tr>
+</table>
+<div *ngIf="check">
+    <showEmp [empObj]="empObj" [check]="check"></showEmp>
+</div>
+<div *ngIf="true then reset()"></div>

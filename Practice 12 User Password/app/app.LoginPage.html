@@ -1,0 +1,11 @@
+<form>
+    Enter Username:
+    <input type="text" #usercontrol="ngModel" [(ngModel)]="user" name="user" required/><br/>
+    <span *ngIf="usercontrol.touched && usercontrol.invalid">Enter Username<br></span>
+    Enter Password:
+    <input type="password" #passcontrol="ngModel" [(ngModel)]="pass" name="pass" required/><br/> 
+    <span *ngIf="passcontrol.touched && passcontrol.invalid">Enter Password<br></span> 
+    <input type="button" (click)="verify()" />
+</form>
+
+ 

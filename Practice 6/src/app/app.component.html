@@ -1,0 +1,16 @@
+﻿<table border="1"  class="table table-hover table-dark" style="margin-top:3%">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Author</th>
+        <th>Button</th>
+    </tr>
+    <tr *ngFor="let em of empAll; let i=index ">
+        <td>{{em.id}}</td>
+        <td>{{em.title}}</td>
+        <td>{{em.year}}</td>
+        <td>{{em.author}}</td>
+        <td><input type="button" class="btn btn-light" value="DELETE" (click)="deleteBook(i)"></td>
+    </tr>
+</table>

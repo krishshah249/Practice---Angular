@@ -1,0 +1,53 @@
+<h2  style="font-style: italic; color:black; font-weight: bold"> Add Employee</h2>
+<table class="table table-bordered table-dark"   style="width: 50%; margin-top: 1%; margin-left: 1%;">
+    <tr> 
+        <td>Employee Id </td>
+        <td><input type="text" [(ngModel)]="empId" placeholder="Enter Your Id" /> </td>
+    </tr>
+    <tr> 
+        <td>Employee Name  </td>
+        <td><input type="text" [(ngModel)]="empName" placeholder="Enter Your Name"  /> </td>
+    </tr>
+    <tr> 
+        <td>Employee Salary  </td>
+        <td><input type="text" [(ngModel)]="empSalary" placeholder="Enter Your Salary" /> </td>
+    </tr>
+    <tr> 
+        <td colspan="2" align="center"><input type="button" class="btn btn-success" value="Add Employee" (click)="addEmployee()"/> </td>
+    </tr>
+</table >
+<h2 style="font-style: italic; color:black; font-weight: bold">Show All Employee</h2>
+<table border="1" class="table table-bordered table-dark"   style="width: 50%; margin-top: 1%; margin-left: 1%;">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th colspan="2" style="text-align: center">Buttons</th>
+    </tr>
+    <tr *ngFor="let data of empall ;let i=index">
+        <td> {{data.empId}}</td>
+        <td> {{data.empName}}</td>
+        <td> {{data.empSalary}}</td>
+        <td align="center"><input type="button" class="alert alert-danger" value="Delete" (click)="deleteEmployee(i)"/></td>
+        <td align="center"><input  type="button" class="alert alert-primary" value="Update" (click)="detailsEmployee(i)"/></td>
+    </tr>
+</table>
+<h2 style="font-style: italic; color:black; font-weight: bold">Update Employee</h2>
+<table class="table table-bordered table-dark"   style="width: 50%; margin-top: 1%; margin-left: 1%;">
+    <tr>
+        <td>Employee Id</td>
+        <td><input type="text"  [(ngModel)]="empid" id="id1" placeholder="Enter Your Id" /></td>
+    </tr>
+    <tr> 
+        <td>Employee Name</td>
+        <td><input type="text"  [(ngModel)]="empname" id="name1" placeholder="Enter Your Name" /></td>
+    </tr>
+    <tr> 
+        <td>Employee Salary</td>
+        <td><input type="text"  [(ngModel)]="empsalary" id="sal1" placeholder="Enter Your Salary" /></td>
+    </tr>
+    
+    <tr> 
+           <td colspan="2" align="center"><input class="alert alert-primary" type="button" value="Update" (click)="updateEmployee()"/></td>
+    </tr>
+</table>

@@ -1,0 +1,8 @@
+<h2>In Add Employee HTML..........</h2>
+Data from parent..{{inchild}}
+<br/>
+<input type="button" value="Child" (click)="callingParent()"/>
+<br/>
+<showEmp [data]="addempdata" (notify)="getData($event)"></showEmp> 
+<br/>
+data received from show......{{message}}

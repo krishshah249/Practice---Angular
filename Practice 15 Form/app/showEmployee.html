@@ -1,0 +1,16 @@
+<h3>Show Employee Html printing</h3>
+
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Department</th>
+    </tr>
+    <tr *ngFor="let emp of empAll">
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName}}</td>
+        <td>{{emp.empSalary}}</td>
+        <td>{{emp.empDepartment}}</td>
+    </tr>
+</table>
